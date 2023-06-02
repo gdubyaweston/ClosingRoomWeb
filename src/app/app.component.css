@@ -1,0 +1,73 @@
+
+.NavStyleExpanded {
+    background-color: #2D355E;
+    color: white;
+    width: 170px;
+    position: fixed;
+    height: 100%;
+    padding-top: 10px;
+    font-size: 20px;
+  }
+  
+  .NavStyleNotExpanded {
+    display: none;
+  }
+  
+  .NavStyleExpanded a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .CExpanded {
+    display: block;
+  }
+  
+  .CNotExpanded {
+    display: none;
+  }
+  
+  .RightExpand {
+    margin-left: 0;
+  }
+  
+  .RightNotExpand {
+    margin-left: 150px;
+  }
+  
+  .HeaderStyle {
+    background-color: #2D355E;
+    color: white;
+    font-size: 50px;
+    height: 70px;
+    width: 100%;
+    padding-left: 20px;
+    text-align: center;
+  }
+  
+  .FooterStyle {
+    background-color: #2D355E;
+    color: white;
+    font-size: 18px;
+    height: 30px;
+    padding-top: 1px;
+    padding-left: 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: left;
+  }
+  
+  .btnNavToggle {
+    border: 0 !important;
+    border-radius: 0;
+    font-weight: bold;
+    color: white;
+    background-color: #2D355E;
+    margin: 2px;
+  }
+  
+  .FakeHyper {
+    cursor: pointer;
+  }
+  
+  
