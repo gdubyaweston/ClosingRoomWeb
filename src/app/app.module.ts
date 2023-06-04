@@ -10,6 +10,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login/login.component';
 import { LoginTwoStepComponent } from './login/login-two-step/login-two-step.component';
 
+import { EscrowModule } from './escrow/escrow.module';
+import { authInterceptorProviders } from './_helpers/auth.interceptor';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,9 +26,10 @@ import { LoginTwoStepComponent } from './login/login-two-step/login-two-step.com
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    EscrowModule
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

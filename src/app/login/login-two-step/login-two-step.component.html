@@ -1,1 +1,6 @@
-<p>login-two-step works!</p>
+
+<p style="padding-left: 10px;">
+    Please provide the code that was sent to you.<br />
+    <input type="text" id="inptfCode" [(ngModel)]="token" style="height: 25px; width: 150px;"><br />
+    <button (click)="validateUser()">Verify</button>
+  </p>

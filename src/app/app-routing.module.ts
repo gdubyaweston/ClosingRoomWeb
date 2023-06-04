@@ -1,7 +1,22 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { LoginComponent } from './login/login/login.component';
+import { LoginTwoStepComponent } from './login/login-two-step/login-two-step.component';
+
+import { EscrowModule } from './escrow/escrow.module';
+import { EscrowDetailComponent } from './escrow/escrow-detail/escrow-detail.component';
+import { EscrowNewComponent } from './escrow/escrow-new/escrow-new.component';
+import { EscrowListComponent } from './escrow/escrow-list/escrow-list.component';
+
+const routes: Routes = [
+  { path: 'Login/TwoFactor', component: LoginTwoStepComponent },
+  { path: 'Login', component: LoginComponent },
+  { path: 'EscrowDetail/:escrowOrderID', component: EscrowDetailComponent },
+  { path: 'EscrowNew', component: EscrowNewComponent },
+  { path: 'EscrowList/:searchType', component: EscrowListComponent },
+  { path: '', redirectTo: 'EscrowList/open', pathMatch: 'full' }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

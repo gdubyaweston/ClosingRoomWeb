@@ -1,1 +1,13 @@
-<p>login works!</p>
+
+<div style="padding-top: 20px; padding-left: 20px;">
+    <div>
+      <label style="font-weight: bold;">Username:</label><br />
+      <input type="text" [(ngModel)]="userName" style="width: 300px;">
+    </div>
+    <div>
+      <label style="font-weight: bold;">Password:</label><br />
+      <input type="password" [(ngModel)]="password" style="width: 300px;">
+    </div>
+    <br />
+    <div><button (click)="loginUser()">LogIn</button></div>
+  </div>
