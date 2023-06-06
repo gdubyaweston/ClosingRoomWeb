@@ -4,7 +4,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login/login.component';
 import { LoginTwoStepComponent } from './login/login-two-step/login-two-step.component';
 
-import { EscrowModule } from './escrow/escrow.module';
 import { EscrowDetailComponent } from './escrow/escrow-detail/escrow-detail.component';
 import { EscrowNewComponent } from './escrow/escrow-new/escrow-new.component';
 import { EscrowListComponent } from './escrow/escrow-list/escrow-list.component';

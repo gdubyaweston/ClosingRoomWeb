@@ -1,0 +1,19 @@
+<h2 matDialogTitle style="padding-top: 2px;">
+    Create Demo Order
+    <button mat-button matDialogClose matTooltip="Close" style="background-color: transparent; color: black; float: right; font-size: 24px;">
+      X
+    </button>  
+</h2>
+<mat-dialog-content>
+    <p style="font-size: 22px; padding-left: 15px; padding-top: 30px;" [innerHTML]="message"></p>
+    <p style="font-size: 22px; padding-left: 15px; padding-bottom: 280px;" [innerHTML]="copyMessage"></p>    
+  </mat-dialog-content>
+  <mat-dialog-actions align="end">
+    <button mat-button style="background-color: red; color: white; margin-right: 4px;" matDialogClose>{{ cancelMessage }}</button>
+    <div *ngIf="showStartCopy">
+      <button mat-button style="background-color: teal; color: white; margin-right: 4px;" [innerHTML]="continueMessage" (click)="continueCreation();"></button>
+    </div>
+    <div *ngIf="showEndCopy">
+      <button mat-button style="background-color: blue; color: white; margin-right: 4px;" [innerHTML]="gotoCopyMessage" (click)="gotoCopy();"></button>
+    </div>
+  </mat-dialog-actions>

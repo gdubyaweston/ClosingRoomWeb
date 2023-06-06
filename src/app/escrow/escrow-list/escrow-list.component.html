@@ -1,1 +1,68 @@
-<p>escrow-list works!</p>
+
+<div >
+    <mat-form-field style="padding: 8px; width: 300px;">
+      <mat-label>Filter Orders:</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Filter Orders" >
+    </mat-form-field>
+    <div style="text-align: center; font-size: 24px; font-weight: bold; padding: 8px; ">{{ pageTitle }}</div>
+    <table mat-table [dataSource]="dataSource" width="100%" matSort>
+      
+      <!-- Escrow Order ID Column -->
+      <ng-container matColumnDef="view">
+        <th mat-header-cell *matHeaderCellDef style="font-weight: bold; font-size: 16px; width: 80px;"></th>
+        <td mat-cell *matCellDef="let element">
+          <button (click)="showDetails(element.escrowOrderID)" style="width: 60px;">View</button>
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="escrowOrderID">
+        <th mat-header-cell *matHeaderCellDef style="font-weight: bold; font-size: 16px; width: 80px;" mat-sort-header>Order ID</th>
+        <td mat-cell *matCellDef="let element"> {{element.escrowOrderID}} </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="orderStatus">
+        <th mat-header-cell *matHeaderCellDef style="font-weight: bold; font-size: 16px; width: 100px;" mat-sort-header>Status</th>
+        <td mat-cell *matCellDef="let element"> {{element.orderStatus}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="orderDate">
+        <th mat-header-cell *matHeaderCellDef style="font-weight: bold; font-size: 16px; width: 120px;" mat-sort-header>Order Date</th>
+        <td mat-cell *matCellDef="let element"> {{element.orderDate | date:'MM/dd/yyyy'}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="submittedByName">
+        <th mat-header-cell *matHeaderCellDef style="font-weight: bold; font-size: 16px; width: 150px;" mat-sort-header>Submitted By</th>
+        <td mat-cell *matCellDef="let element"> {{element.submittedByName}} </td>
+      </ng-container>
+    
+      <ng-container matColumnDef="escrowDescription">
+        <th mat-header-cell *matHeaderCellDef style="font-weight: bold; font-size: 16px; width: 300px;" >Description</th>
+        <td mat-cell *matCellDef="let element"> 
+          <span *ngIf="element.escrowDescription.length > 60" matTooltip = "{{element.escrowDescription}}" matTooltipPosition = "left" matTooltipClass = "pdtooltip">
+            {{ element.escrowDescription.substring(0, 60)}}....          
+          </span>
+          <span *ngIf="element.escrowDescription.length <= 60">{{ element.escrowDescription }}</span>
+        </td>
+      </ng-container>
+  
+      <ng-container matColumnDef="participantDisplay">
+        <th mat-header-cell *matHeaderCellDef style="font-weight: bold; font-size: 16px; width: 300px;" >Participant(s)</th>
+        <td mat-cell *matCellDef="let element"> 
+          <span *ngIf="element.participantDisplay.length > 60" matTooltip = "{{element.participantDisplay}}" matTooltipPosition = "left" matTooltipClass = "pdtooltip">
+            {{ element.participantDisplay.substring(0, 60)}}....          
+          </span>
+          <span *ngIf="element.participantDisplay.length <= 60">{{ element.participantDisplay }}</span>
+        </td>
+      </ng-container>
+  
+      <!-- This is used to pad the table so keep it at the end -->
+      <ng-container matColumnDef="end">
+        <th mat-header-cell *matHeaderCellDef style="font-weight: bold; font-size: 16px; width: 10px;"></th>
+        <td mat-cell *matCellDef="let element" ></td>
+      </ng-container>
+    
+      <tr mat-header-row *matHeaderRowDef="displayedColumns" ></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 15]"></mat-paginator>
+  </div>

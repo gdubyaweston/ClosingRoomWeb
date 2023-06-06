@@ -5,6 +5,8 @@ import { EscrowListComponent } from './escrow-list/escrow-list.component';
 import { EscrowDetailComponent } from './escrow-detail/escrow-detail.component';
 import { EscrowNewComponent } from './escrow-new/escrow-new.component';
 
+import { MaterialModule } from 'src/material.module';
+import { EdModalsModule } from './escrow-detail/ed-modals/ed-modals.module';
 
 
 @NgModule({
@@ -14,7 +16,9 @@ import { EscrowNewComponent } from './escrow-new/escrow-new.component';
     EscrowNewComponent
   ],
   imports: [
-    CommonModule
+    CommonModule, 
+    MaterialModule,
+    EdModalsModule
   ]
 })
 export class EscrowModule { }
