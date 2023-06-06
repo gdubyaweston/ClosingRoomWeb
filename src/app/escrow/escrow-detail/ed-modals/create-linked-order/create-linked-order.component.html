@@ -1,0 +1,38 @@
+<h2 matDialogTitle style="padding-top: 2px;">
+    Create Linked Order
+    <button mat-button matDialogClose matTooltip="Close" style="background-color: transparent; color: black; float: right; font-size: 24px;">
+      X
+    </button>  
+</h2>
+<p style="font-size: 18px; font-weight: bold;">Available Players  
+</p>
+<div>
+  <table style="font-size: 16px;">
+    <thead>
+      <th></th>
+      <th>Name</th>
+      <th>Alias</th>
+      <th>Role</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let pl of players">
+        <td style="width: 50px;">
+          <input type="checkbox" style="vertical-align: middle; height: 16px; width: 16px;" [(ngModel)]="pl.isChecked">
+        </td>
+        <td style="width: 310px;">
+          {{ pl.playerName }}
+        </td>
+        <td style="width: 310px;">
+          <input type="text" style="width: 300px; height: 25px;" [(ngModel)]="pl.trackerDisplayAlias" name="pl.trackerDisplayAlias" id="pl.trackerDisplayAlias">
+        </td>
+        <td style="width: 310px;">
+          <select style="width: 300px; height: 25px;" [(ngModel)]="pl.roleID">
+            <option *ngFor="let role of pl.availableRoles" [value]="role.roleId">{{ role.roleName }}</option>
+          </select>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br>
+<button mat-button id="btnCopySelected" style="background-color: lightgrey;" (click)="copySelected();" >Copy Selected</button>

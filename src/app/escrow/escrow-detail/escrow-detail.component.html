@@ -1,13 +1,12 @@
-<p>escrow-detail works!</p>
-<p>LET-R-RIP</p>
+<p></p>
 <div>
     <mat-toolbar style="height: 35px; background-color: transparent; font-size: 14px;">
         <span style="padding-right: 10px; ">Escrow Order ID: {{ escrowOrderID }}</span>
         <button mat-button [matMenuTriggerFor]="menu" style="background-color: transparent;">Options</button>
         <mat-menu #menu="matMenu">
             <button mat-menu-item (click)="openCreateDemoOrder(true, true, 'fullscreen-dialog', '50', '50');">Create Demo Order</button>
-            <!--<button mat-menu-item (click)="openCreateLinkedOrder();">Create Linked Order</button>
-            <button mat-menu-item (click)="openSearchAddToClosing();">Search/Add Item(s) To Closing</button>
+            <button mat-menu-item (click)="openCreateLinkedOrder(true, true, 'fullscreen-dialog', '90', '90');">Create Linked Order</button>
+            <!--<button mat-menu-item (click)="openSearchAddToClosing();">Search/Add Item(s) To Closing</button>
             <button mat-menu-item (click)="openUpdateClosingDescription();">Update Closing Description</button>
             <button mat-menu-item (click)="openSendEmailEscrowDetail();">Send Email</button>
             <button mat-menu-item (click)="openTitleSearch();">Title Search</button>

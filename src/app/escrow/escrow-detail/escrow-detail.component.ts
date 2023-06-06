@@ -6,6 +6,7 @@ import { EscrowService } from '@app/_external_services/escrow.service';
 import { TokenStorageService } from '@app/_services/tokenstorage.service';
 import { CreateDemoOrderComponent } from './ed-modals/create-demo-order/create-demo-order.component';
 import { MatMenuTrigger } from '@angular/material/menu';
+import { CreateLinkedOrderComponent } from './ed-modals/create-linked-order/create-linked-order.component';
 
 @Component({
   selector: 'app-escrow-detail',
@@ -46,6 +47,20 @@ export class EscrowDetailComponent implements OnInit {
   // dialog references
   openCreateDemoOrder(af: boolean, dc: boolean, pnlClass: string, w: string, h: string): void {
     const dr = this.dialog.open(CreateDemoOrderComponent, {
+      autoFocus: af,
+      disableClose: dc,
+      panelClass: pnlClass,
+      width: w + '%',
+      height: h + '%'
+    });
+
+    dr.componentInstance.setData(this.escrowOrderID);
+    
+    dr.afterClosed().subscribe(() => this.menuTrigger.focus());
+  }
+
+  openCreateLinkedOrder(af: boolean, dc: boolean, pnlClass: string, w: string, h: string): void {
+    const dr = this.dialog.open(CreateLinkedOrderComponent, {
       autoFocus: af,
       disableClose: dc,
       panelClass: pnlClass,

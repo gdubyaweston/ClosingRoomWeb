@@ -7,8 +7,8 @@
 <mat-dialog-content>
     <p style="font-size: 22px; padding-left: 15px; padding-top: 30px;" [innerHTML]="message"></p>
     <p style="font-size: 22px; padding-left: 15px; padding-bottom: 280px;" [innerHTML]="copyMessage"></p>    
-  </mat-dialog-content>
-  <mat-dialog-actions align="end">
+</mat-dialog-content>
+<mat-dialog-actions align="end">
     <button mat-button style="background-color: red; color: white; margin-right: 4px;" matDialogClose>{{ cancelMessage }}</button>
     <div *ngIf="showStartCopy">
       <button mat-button style="background-color: teal; color: white; margin-right: 4px;" [innerHTML]="continueMessage" (click)="continueCreation();"></button>
@@ -16,4 +16,4 @@
     <div *ngIf="showEndCopy">
       <button mat-button style="background-color: blue; color: white; margin-right: 4px;" [innerHTML]="gotoCopyMessage" (click)="gotoCopy();"></button>
     </div>
-  </mat-dialog-actions>
+</mat-dialog-actions>
